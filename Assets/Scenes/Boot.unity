@@ -388,6 +388,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3a65bae7c3f693468bb94df5b381d8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _background: {fileID: 1025193751}
+  _from: {r: 0.054901965, g: 0, b: 0.121568635, a: 1}
+  _to: {r: 0.17261013, g: 0.021982923, b: 0.3584906, a: 1}
 --- !u!114 &712689615
 MonoBehaviour:
   m_ObjectHideFlags: 0
