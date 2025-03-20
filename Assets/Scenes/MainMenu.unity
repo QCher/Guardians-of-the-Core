@@ -529,7 +529,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentReference:
-    TypeName: 
+    TypeName: BootScope
   autoRun: 1
   autoInjectGameObjects: []
   _mainMenuScreen: {fileID: 247725275}

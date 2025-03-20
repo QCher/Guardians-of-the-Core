@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentReference:
-    TypeName: 
+    TypeName: BootScope
   autoRun: 1
   autoInjectGameObjects: []
   _gameplayCamera: {fileID: 330585545}
