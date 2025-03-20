@@ -1,0 +1,43 @@
+﻿using System;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using VContainer.Unity;
+using VContainer.Util;
+
+namespace MainMenu
+{
+    public class MainMenuPresenter : IInitializable, IDisposable
+    {
+        private readonly MainMenuScreen _mainMenuScreen;
+        private readonly SceneLoader _sceneLoader;
+        private readonly LifetimeScope _scope;
+        private readonly string _sceneName;
+        public MainMenuPresenter(MainMenuScreen mainMenuScreen, SceneLoader sceneLoader, LifetimeScope scope, string sceneName)
+        {
+            _mainMenuScreen = mainMenuScreen;
+            _sceneLoader = sceneLoader;
+            _scope = scope;
+            _sceneName = sceneName;
+        }
+        public void Initialize()
+        {
+            _mainMenuScreen.PlayButton.onClick.AddListener(OnPlayPressedHandler);
+        }
+        
+        public void Dispose()
+        {
+            _mainMenuScreen.PlayButton.onClick.RemoveListener(OnPlayPressedHandler);
+        }
+        
+        private async void OnPlayPressedHandler()
+        {
+            await _sceneLoader.LoadScene(_sceneName, _scope.Parent);
+            await SceneManager.UnloadSceneAsync("MainMenu");
+        }
+
+        private void OnQuitPressed()
+        {
+            Application.Quit();
+        }
+    }
+}
