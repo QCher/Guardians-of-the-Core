@@ -39,7 +39,7 @@ public class Spawner : MonoBehaviour
 
     async UniTask SpawnTask()
     {
-        while (true)
+        while (this)
         {
             var random = Random.insideUnitSphere;
             random.y = 0;
@@ -50,6 +50,6 @@ public class Spawner : MonoBehaviour
 
     private Creature CreateFunc()
     {
-        return Instantiate(_prefab);
+        return Instantiate(_prefab, _spawnPoint);
     }
 }
