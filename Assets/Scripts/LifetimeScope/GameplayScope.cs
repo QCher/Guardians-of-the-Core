@@ -12,6 +12,7 @@ public class GameplayScope : LifetimeScope
     [SerializeField, Required] private GameplayScreen _gameplayScreen;
     [Scene, SerializeField] private string _navigationSceneName;
     [SerializeField] Placement[] _placements;
+    [SerializeField] private GameObject _character;
 
     protected override void Configure(IContainerBuilder builder)
     {
@@ -22,5 +23,7 @@ public class GameplayScope : LifetimeScope
         }
         builder.RegisterComponent(_gameplayCamera);
         builder.RegisterEntryPoint<GameplayPresenter>().WithParameter("sceneName", _navigationSceneName);
+        builder.RegisterEntryPoint<StartGameEntryPoint>().WithParameter(_character);
+
     }
 }
