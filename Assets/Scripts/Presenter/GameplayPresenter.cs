@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using VContainer.Unity;
@@ -12,12 +13,15 @@ namespace Gameplay
         private readonly SceneLoader _sceneLoader;
         private readonly LifetimeScope _scope;
         private readonly string _sceneName;
-        public GameplayPresenter(GameplayScreen gameplayScreen, SceneLoader sceneLoader, LifetimeScope scope, string sceneName)
+        private IReadOnlyList<PlacementObject> _placements;
+        
+        public GameplayPresenter(GameplayScreen gameplayScreen, SceneLoader sceneLoader, LifetimeScope scope, IReadOnlyList<PlacementObject> placements, string sceneName)
         {
             _gameplayScreen = gameplayScreen;
             _sceneLoader = sceneLoader;
             _scope = scope;
             _sceneName = sceneName;
+            _placements = placements;
         }
         public void Initialize()
         {
