@@ -634,7 +634,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentReference:
-    TypeName: 
+    TypeName: RootScope
   autoRun: 1
   autoInjectGameObjects: []
   _loadingScreen: {fileID: 712689614}

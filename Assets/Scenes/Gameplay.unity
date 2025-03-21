@@ -220,7 +220,7 @@ MonoBehaviour:
   - {fileID: 7029523611228863623}
   - {fileID: 7029523610521161216}
   - {fileID: 7029523610947330225}
-  _character: {fileID: 1082034268796750, guid: 29855e4a0c37747448a3fe54db331aec, type: 3}
+  _character: {fileID: 4275089974699143811, guid: 29855e4a0c37747448a3fe54db331aec, type: 3}
 --- !u!4 &146876344
 Transform:
   m_ObjectHideFlags: 0

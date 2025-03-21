@@ -10,13 +10,11 @@ namespace MainMenu
     {
         private readonly MainMenuScreen _mainMenuScreen;
         private readonly SceneLoader _sceneLoader;
-        private readonly LifetimeScope _scope;
         private readonly string _sceneName;
-        public MainMenuPresenter(MainMenuScreen mainMenuScreen, SceneLoader sceneLoader, LifetimeScope scope, string sceneName)
+        public MainMenuPresenter(MainMenuScreen mainMenuScreen, SceneLoader sceneLoader, string sceneName)
         {
             _mainMenuScreen = mainMenuScreen;
             _sceneLoader = sceneLoader;
-            _scope = scope;
             _sceneName = sceneName;
         }
         public void Initialize()
@@ -31,13 +29,8 @@ namespace MainMenu
         
         private async void OnPlayPressedHandler()
         {
-            await _sceneLoader.LoadScene(_sceneName, _scope.Parent);
+            await _sceneLoader.LoadScene(_sceneName);
             await SceneManager.UnloadSceneAsync("MainMenu");
-        }
-
-        private void OnQuitPressed()
-        {
-            Application.Quit();
         }
     }
 }

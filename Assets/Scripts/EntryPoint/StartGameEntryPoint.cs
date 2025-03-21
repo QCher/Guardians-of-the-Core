@@ -1,25 +1,27 @@
+using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
+using IInitializable = VContainer.Unity.IInitializable;
 
 public class StartGameEntryPoint : IInitializable
 {
     private readonly IReadOnlyList<PlacementObject> _placements;
-    private readonly IObjectResolver _container;
-    private readonly GameObject _character;
+    private readonly Func<BogusController> _factory;
     
-    public StartGameEntryPoint(IReadOnlyList<PlacementObject> placementObjects, IObjectResolver container, GameObject character)
+    
+    public StartGameEntryPoint(IReadOnlyList<PlacementObject> placementObjects,  Func<BogusController> factory)
     {
         _placements = placementObjects;
-        _container = container;
-        _character = character;
+        _factory = factory;
     }
     void IInitializable.Initialize()
     {
         foreach (var placement in _placements)
         {
-            placement.Object.Place(_container.Instantiate(_character));
+            placement.Object.Place(_factory.Invoke().gameObject);
         }
     }
 }

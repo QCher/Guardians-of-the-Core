@@ -11,17 +11,13 @@ namespace Gameplay
     {
         private readonly GameplayScreen _gameplayScreen;
         private readonly SceneLoader _sceneLoader;
-        private readonly LifetimeScope _scope;
         private readonly string _sceneName;
-        private IReadOnlyList<PlacementObject> _placements;
         
-        public GameplayPresenter(GameplayScreen gameplayScreen, SceneLoader sceneLoader, LifetimeScope scope, IReadOnlyList<PlacementObject> placements, string sceneName)
+        public GameplayPresenter(GameplayScreen gameplayScreen, SceneLoader sceneLoader, string sceneName)
         {
             _gameplayScreen = gameplayScreen;
             _sceneLoader = sceneLoader;
-            _scope = scope;
             _sceneName = sceneName;
-            _placements = placements;
         }
         public void Initialize()
         {
@@ -35,7 +31,7 @@ namespace Gameplay
         
         private async void OnLeavePressedHandler()
         {
-            await _sceneLoader.LoadScene(_sceneName, _scope.Parent);
+            await _sceneLoader.LoadScene(_sceneName);
             await SceneManager.UnloadSceneAsync("Gameplay");
         }
     }

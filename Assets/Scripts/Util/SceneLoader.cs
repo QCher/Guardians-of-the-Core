@@ -5,6 +5,13 @@ using VContainer.Unity;
 
 namespace VContainer.Util
 {
+    public class GameInstaller : IInstaller
+    {
+        public void Install(IContainerBuilder builder)
+        {
+            Debug.Log("Game Installer");
+        }
+    }
     public class SceneLoader
     {
         private readonly LoadingScreen _loadingScreen;
@@ -13,13 +20,10 @@ namespace VContainer.Util
         {
             _loadingScreen = screen;
         }
-        public async UniTask LoadScene(string sceneName, LifetimeScope parent)
+        public async UniTask LoadScene(string sceneName)
         {
             _loadingScreen.gameObject.SetActive(true);
-            using (LifetimeScope.EnqueueParent(parent))
-            { 
-                await SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
-            }
+            await SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
             await UniTask.Delay(1500);
             _loadingScreen.gameObject.SetActive(false);
         }

@@ -1,8 +1,6 @@
 using Gameplay;
-using MainMenu;
 using NaughtyAttributes;
 using UnityEngine;
-using UnityEngine.Serialization;
 using VContainer;
 using VContainer.Unity;
 
@@ -12,18 +10,32 @@ public class GameplayScope : LifetimeScope
     [SerializeField, Required] private GameplayScreen _gameplayScreen;
     [Scene, SerializeField] private string _navigationSceneName;
     [SerializeField] Placement[] _placements;
-    [SerializeField] private GameObject _character;
+    [SerializeField] private BogusController _character;
 
     protected override void Configure(IContainerBuilder builder)
     {
-        builder.RegisterComponent(_gameplayScreen);
+        builder.RegisterInstance(_character);
         foreach (var placement in _placements)
         {
             builder.Register<PlacementObject>(Lifetime.Scoped).WithParameter(placement);
         }
-        builder.RegisterComponent(_gameplayCamera);
-        builder.RegisterEntryPoint<GameplayPresenter>().WithParameter("sceneName", _navigationSceneName);
-        builder.RegisterEntryPoint<StartGameEntryPoint>().WithParameter(_character);
-
+        
+        builder.UseComponents(componentsBuilder =>
+        {
+            componentsBuilder.AddInstance(_gameplayScreen);
+            componentsBuilder.AddInstance(_gameplayCamera);
+        });
+        
+        builder.UseEntryPoints(pointsBuilder =>
+        {
+            pointsBuilder.Add<GameplayPresenter>().WithParameter("sceneName", _navigationSceneName);
+            pointsBuilder.Add<StartGameEntryPoint>().WithParameter(_character);
+        });
+        
+        builder.RegisterFactory<BogusController>(container => // container is an IObjectResolver
+        {
+            var dependency = container.Resolve<BogusController>(); // Resolve per scope
+            return () => container.Instantiate(dependency); // Execute per factory invocation
+        }, Lifetime.Scoped);
     }
 }

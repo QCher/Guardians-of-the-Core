@@ -16,6 +16,6 @@ public class BogusController : MonoBehaviour
         {
             _animator.SetTrigger("Trigger");
         }
-        Logger.Log(name);
+        //Logger.Log(name);
     }
 }
