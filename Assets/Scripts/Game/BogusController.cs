@@ -1,10 +1,13 @@
 using System;
 using UnityEngine;
+using VContainer;
 
 //Nothing burger controller
 public class BogusController : MonoBehaviour
 {
     [SerializeField] Animator _animator;
+    
+    [Inject] private ILogger Logger { get; set; }
 
 
     private void Update()
@@ -13,5 +16,6 @@ public class BogusController : MonoBehaviour
         {
             _animator.SetTrigger("Trigger");
         }
+        Logger.Log(name);
     }
 }
