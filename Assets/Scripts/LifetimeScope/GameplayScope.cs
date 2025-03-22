@@ -10,11 +10,9 @@ public class GameplayScope : LifetimeScope
     [SerializeField, Required] private GameplayScreen _gameplayScreen;
     [Scene, SerializeField] private string _navigationSceneName;
     [SerializeField] Placement[] _placements;
-    [SerializeField] private BogusController _character;
 
     protected override void Configure(IContainerBuilder builder)
     {
-        builder.RegisterInstance(_character);
         foreach (var placement in _placements)
         {
             builder.Register<PlacementObject>(Lifetime.Scoped).WithParameter(placement);
@@ -29,7 +27,7 @@ public class GameplayScope : LifetimeScope
         builder.UseEntryPoints(pointsBuilder =>
         {
             pointsBuilder.Add<GameplayPresenter>().WithParameter("sceneName", _navigationSceneName);
-            pointsBuilder.Add<StartGameEntryPoint>().WithParameter(_character);
+            //pointsBuilder.Add<StartGameEntryPoint>().WithParameter(_character);
         });
         
         builder.RegisterFactory<BogusController>(container => // container is an IObjectResolver

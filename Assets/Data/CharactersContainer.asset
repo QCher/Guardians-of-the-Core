@@ -13,30 +13,30 @@ MonoBehaviour:
   m_Name: CharactersContainer
   m_EditorClassIdentifier: 
   Characters:
-  - Id: 
+  - Id: drain
     Asset:
-      m_AssetGUID: 
+      m_AssetGUID: 1dcf63542c38227498f33699b545c9e0
       m_SubObjectName: 
       m_SubObjectGUID: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-  - Id: 
+  - Id: kael
     Asset:
-      m_AssetGUID: 
+      m_AssetGUID: 9491acbdae604b84faefd0f1d8aa0793
       m_SubObjectName: 
       m_SubObjectGUID: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-  - Id: 
+  - Id: lyra
     Asset:
-      m_AssetGUID: 
+      m_AssetGUID: 1d2d02811b559b842b53277a6a10434d
       m_SubObjectName: 
       m_SubObjectGUID: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-  - Id: 
+  - Id: selis
     Asset:
-      m_AssetGUID: 
+      m_AssetGUID: 13e65403df7f7f946b479fbe7af23573
       m_SubObjectName: 
       m_SubObjectGUID: 
       m_SubObjectType: 

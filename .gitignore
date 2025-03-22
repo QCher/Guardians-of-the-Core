@@ -56,3 +56,6 @@ sysinfo.txt
 /Logs
 *.log
 *.log
+*.log
+*.log
+/Logs
