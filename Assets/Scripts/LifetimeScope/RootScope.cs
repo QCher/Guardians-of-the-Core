@@ -9,7 +9,6 @@ public class RootScope : LifetimeScope
     protected override void Configure(IContainerBuilder builder)
     {
         builder.Register<ILogger, LogService>(Lifetime.Singleton);
-        builder.Register<SceneLoader>(Lifetime.Singleton);
         builder.RegisterInstance(_charactersContainer);
     }
 }

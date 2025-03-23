@@ -2,6 +2,7 @@ using NaughtyAttributes;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
+using VContainer.Util;
 
 public class BootScope : LifetimeScope
 {
@@ -10,6 +11,7 @@ public class BootScope : LifetimeScope
     protected override void Configure(IContainerBuilder builder)
     {
         builder.RegisterComponent(_loadingScreen);
+        builder.Register<SceneLoader>(Lifetime.Singleton);
         builder.RegisterEntryPoint<LoadSceneEntryPoint>().WithParameter("sceneName", _sceneName);
     }
 }
