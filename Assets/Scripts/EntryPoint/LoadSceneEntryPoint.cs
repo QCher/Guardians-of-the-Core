@@ -1,6 +1,7 @@
 ﻿using System.Threading;
 using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
+using UnityEngine.AddressableAssets;
 using VContainer.Unity;
 using VContainer.Util;
 
@@ -20,6 +21,7 @@ namespace VContainer
         
         async UniTask IAsyncStartable.StartAsync(CancellationToken cancellation = new())
         {
+            var result = await Addressables.InitializeAsync();
             await _sceneLoader.LoadScene(_sceneName);
         }
     }
