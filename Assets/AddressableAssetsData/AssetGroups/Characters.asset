@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Characters
+  m_EditorClassIdentifier: 
+  m_GroupName: Characters
+  m_GUID: b8582fe2a37d17e438ffa6f0483d9b62
+  m_SerializeEntries:
+  - m_GUID: 13e65403df7f7f946b479fbe7af23573
+    m_Address: Assets/Art/Selis.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - characters
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1d2d02811b559b842b53277a6a10434d
+    m_Address: Assets/Art/Lyra.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - characters
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1dcf63542c38227498f33699b545c9e0
+    m_Address: Assets/Art/Dain.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - characters
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9491acbdae604b84faefd0f1d8aa0793
+    m_Address: Assets/Art/Kael.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - characters
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 5952bd52148f3df4398450806e73afa2, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 8fefed6010ded414baa4eec12433507a, type: 2}
+    - {fileID: 11400000, guid: 4b0eb97bb3a49c545a46ecbca20d3983, type: 2}

@@ -14,31 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_GroupName: Default Local Group
   m_GUID: a94726d63b1b42d4eac99a2cdb9bb1de
-  m_SerializeEntries:
-  - m_GUID: 13e65403df7f7f946b479fbe7af23573
-    m_Address: Assets/Art/Selis.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - characters
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 1d2d02811b559b842b53277a6a10434d
-    m_Address: Assets/Art/Lyra.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - characters
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 1dcf63542c38227498f33699b545c9e0
-    m_Address: Assets/Art/Dain.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - characters
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 9491acbdae604b84faefd0f1d8aa0793
-    m_Address: Assets/Art/Kael.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - characters
-    FlaggedDuringContentUpdateRestriction: 0
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 5952bd52148f3df4398450806e73afa2, type: 2}
   m_SchemaSet:
