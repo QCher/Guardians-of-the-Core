@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CharactersContainer
   m_EditorClassIdentifier: 
   Characters:
-  - Id: drain
+  - Id: dain
     Asset:
       m_AssetGUID: 1dcf63542c38227498f33699b545c9e0
       m_SubObjectName: 
