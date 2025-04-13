@@ -9,7 +9,10 @@ public class BogusController : MonoBehaviour
     
     [Inject] private ILogger Logger { get; set; }
 
-
+    void Start()
+    {
+    }
+    
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.A))
