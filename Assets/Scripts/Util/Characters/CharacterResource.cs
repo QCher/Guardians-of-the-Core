@@ -6,5 +6,6 @@ using UnityEngine.AddressableAssets;
 public class CharacterResource
 {
     public string Id;
-    public AssetReferenceT<GameObject>  Asset;
+    [AssetReferenceUILabelRestriction("characters")]
+    public AssetReferenceGameObject  Asset;
 }

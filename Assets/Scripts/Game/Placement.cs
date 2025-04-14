@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 public class Placement : MonoBehaviour, IDisposable
 {
@@ -16,6 +17,6 @@ public class Placement : MonoBehaviour, IDisposable
 
     public void Dispose()
     {
-        Destroy(_character);
+        Addressables.ReleaseInstance(_character);
     }
 }
