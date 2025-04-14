@@ -1,6 +1,9 @@
-﻿using JetBrains.Annotations;
+﻿using System;
+using JetBrains.Annotations;
+using UnityEngine;
+using VContainer.Unity;
 
-public class PlacementObject
+public class PlacementObject : IDisposable, IInitializable
 {
     public readonly Placement Object;
 
@@ -8,5 +11,15 @@ public class PlacementObject
     public PlacementObject(Placement placement)
     {
         Object = placement;
+    }
+
+    void IDisposable.Dispose()
+    {
+        Object.Dispose();
+    }
+
+    void IInitializable.Initialize()
+    {
+        Debug.Log("");
     }
 }

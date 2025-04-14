@@ -15,7 +15,7 @@ public class GameplayScope : LifetimeScope
     {
         foreach (var placement in _placements)
         {
-            builder.Register<PlacementObject>(Lifetime.Scoped).WithParameter(placement);
+            builder.RegisterEntryPoint<PlacementObject>(Lifetime.Scoped).AsSelf().WithParameter(placement);
         }
         
         builder.UseComponents(componentsBuilder =>

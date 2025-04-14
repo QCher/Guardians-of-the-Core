@@ -34,9 +34,9 @@ public class StartGameEntryPoint : IAsyncStartable
         {
             var character = await _charactersContainer.GetRandom();
             if(character == null) return;//TODO!: LOGS AND HANDLING ERRORS
-            var instance = GameObject.Instantiate(character);
+            //var instance = GameObject.Instantiate(character);
             //*TODO MOVE INSTANCE TO GAMEPLAY SCENE
-            placement.Object.Place(instance);
+            placement.Object.Place(character);
         }
     }
 }
