@@ -1,6 +1,7 @@
 ﻿using System;
 using JetBrains.Annotations;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using VContainer.Unity;
 
 public class PlacementObject : IDisposable, IInitializable
