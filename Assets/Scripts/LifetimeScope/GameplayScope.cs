@@ -24,16 +24,16 @@ public class GameplayScope : LifetimeScope
             componentsBuilder.AddInstance(_gameplayCamera);
         });
         
+        // builder.RegisterFactory<BogusController>(container => // container is an IObjectResolver
+        // {
+        //     var dependency = container.Resolve<CharactersContainer>(); // Resolve per scope
+        //     return () => container.Instantiate(dependency); // Execute per factory invocation
+        // }, Lifetime.Scoped);
+        
         builder.UseEntryPoints(pointsBuilder =>
         {
             pointsBuilder.Add<GameplayPresenter>().WithParameter("sceneName", _navigationSceneName);
-            //pointsBuilder.Add<StartGameEntryPoint>().WithParameter(_character);
+            pointsBuilder.Add<StartGameEntryPoint>();
         });
-        
-        builder.RegisterFactory<BogusController>(container => // container is an IObjectResolver
-        {
-            var dependency = container.Resolve<BogusController>(); // Resolve per scope
-            return () => container.Instantiate(dependency); // Execute per factory invocation
-        }, Lifetime.Scoped);
     }
 }

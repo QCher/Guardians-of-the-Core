@@ -404,7 +404,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
 --- !u!1 &1025193749
 GameObject:
   m_ObjectHideFlags: 0
@@ -639,6 +639,7 @@ MonoBehaviour:
   autoInjectGameObjects: []
   _loadingScreen: {fileID: 712689614}
   _sceneName: MainMenu
+  _charactersContainer: {fileID: 11400000, guid: b456c96032c897341887eb4d7f614164, type: 2}
 --- !u!1 &1421461263
 GameObject:
   m_ObjectHideFlags: 0
