@@ -64,3 +64,4 @@ sysinfo.txt
 /Logs
 /Logs
 *.log
+/.utmp
