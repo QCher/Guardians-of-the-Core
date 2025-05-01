@@ -17,19 +17,18 @@ public class StartGameEntryPoint : IAsyncStartable
     //*TODO ADD Instance DESTROY AND RELEASE RESOURCE
     //?*TODO IS IT NEW RESOURCE PROVIDER FOR RELEASE RESOURCE
     private readonly CharactersContainer _charactersContainer;
-    //private readonly Func<BogusController> _factory;
     
     
-    public StartGameEntryPoint(IReadOnlyList<PlacementObject> placementObjects, CharactersContainer charactersContainer/*,  Func<BogusController> factory*/)
+    public StartGameEntryPoint(IReadOnlyList<PlacementObject> placementObjects, CharactersContainer charactersContainer)
     {
         _placements = placementObjects;
         _charactersContainer =  charactersContainer;
-        //_factory = factory;
     }
 
     [UsedImplicitly]
     async UniTask IAsyncStartable.StartAsync(CancellationToken cancellation = new CancellationToken())
     {
+        
         foreach (var placement in _placements)
         {
             var character = await _charactersContainer.GetRandom();
