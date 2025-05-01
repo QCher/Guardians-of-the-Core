@@ -7,7 +7,6 @@ using UnityEngine;
 public class SaveDataService
 {
     private const string DefaultFileExtention = ".dat";
-    private const string DefaultDataDirectory = nameof(DefaultDataDirectory);
     public void Save<T>(T data, string fileName){
         try
         {
@@ -33,7 +32,7 @@ public class SaveDataService
     }
     
     string CreateFileName(string fileName) => $"{fileName}{DefaultFileExtention}";
-    string CreateDefaultFullPath(string fileName) => Path.Combine(Application.persistentDataPath, DefaultDataDirectory, CreateFileName(fileName));
+    string CreateDefaultFullPath(string fileName) => Path.Combine(Application.persistentDataPath, CreateFileName(fileName));
     
     
 #if UNITY_EDITOR
@@ -41,7 +40,7 @@ public class SaveDataService
     static void ClearData()
     {
         Debug.Log($"Clear Data at {Application.persistentDataPath}");
-        var defaultPath = Path.Combine(Application.persistentDataPath, DefaultDataDirectory);
+        var defaultPath = Path.Combine(Application.persistentDataPath);
         var data = Directory.EnumerateFiles(defaultPath, "*.dat", SearchOption.AllDirectories);
         foreach (var path in data)
         {
