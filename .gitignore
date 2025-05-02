@@ -66,3 +66,4 @@ sysinfo.txt
 *.log
 /.utmp
 /Logs
+Logs/shadercompiler-UnityShaderCompiler.exe-0.log
