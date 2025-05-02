@@ -12,11 +12,17 @@ namespace CustomRP.Runtime
         };
         private Camera _camera;
         private ScriptableRenderContext _context;
+        CullingResults _cullingResults;
 
         public void Render(ScriptableRenderContext context, Camera camera)
         {
             _camera = camera;
             _context = context;
+
+            if (!Cull())
+            {
+                return;
+            }
             
             Setup();
             DrawVisibleGeometry();
@@ -41,6 +47,17 @@ namespace CustomRP.Runtime
             _commandBuffer.EndSample(_commandBufferName);
             ExecuteBuffer();
             _context.Submit();
+        }
+
+        private bool Cull()
+        {
+            if (_camera.TryGetCullingParameters(out var parameters))
+            {
+                _cullingResults = _context.Cull(ref parameters);
+                return true;
+            }
+
+            return false;
         }
 
         void ExecuteBuffer()
