@@ -77,8 +77,12 @@ MonoBehaviour:
         m_Value: '[UnityEngine.AddressableAssets.Addressables.BuildPath]/[BuildTarget]'
       - m_Id: 8edd7c1976e37994ca906ccc29640fcb
         m_Value: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}/[BuildTarget]'
+      - m_Id: 96eba22a7015afa489565d4930e3c9b5
+        m_Value: Vitalii Kucherenko kucherenkov1990@gmail.com
       - m_Id: d229388591b9a92439c6108abcb129aa
         m_Value: '[UnityEditor.EditorUserBuildSettings.activeBuildTarget]'
+      - m_Id: e489bd413e4fa9a4e848f6196f28badd
+        m_Value: Default profile with local built-in assets
       - m_Id: ee6e8d655b3063a42ae1ab671f279d75
         m_Value: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}/[BuildTarget]'
     - m_InheritedParent: 
@@ -91,8 +95,12 @@ MonoBehaviour:
         m_Value: '[UnityEngine.AddressableAssets.Addressables.BuildPath]/[BuildTarget]'
       - m_Id: 8edd7c1976e37994ca906ccc29640fcb
         m_Value: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}/[BuildTarget]'
+      - m_Id: 96eba22a7015afa489565d4930e3c9b5
+        m_Value: Vitalii Kucherenko kucherenkov1990@gmail.com
       - m_Id: d229388591b9a92439c6108abcb129aa
         m_Value: '[UnityEditor.EditorUserBuildSettings.activeBuildTarget]'
+      - m_Id: e489bd413e4fa9a4e848f6196f28badd
+        m_Value: Produce remote assets
       - m_Id: ee6e8d655b3063a42ae1ab671f279d75
         m_Value: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}/[BuildTarget]'
     m_ProfileEntryNames:
@@ -105,8 +113,14 @@ MonoBehaviour:
     - m_Id: 8edd7c1976e37994ca906ccc29640fcb
       m_Name: Local.LoadPath
       m_InlineUsage: 0
+    - m_Id: 96eba22a7015afa489565d4930e3c9b5
+      m_Name: Author
+      m_InlineUsage: 0
     - m_Id: d229388591b9a92439c6108abcb129aa
       m_Name: BuildTarget
+      m_InlineUsage: 0
+    - m_Id: e489bd413e4fa9a4e848f6196f28badd
+      m_Name: Description
       m_InlineUsage: 0
     - m_Id: ee6e8d655b3063a42ae1ab671f279d75
       m_Name: Remote.LoadPath
@@ -127,7 +141,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0713f482eb556f34584028e1076877fb, type: 2}
   - {fileID: 11400000, guid: 004a9df14faf30747bf73cde6a49eb38, type: 2}
   - {fileID: 11400000, guid: 6edf95f3a26556349950033f47611876, type: 2}
-  m_ActiveProfileId: fc9aee5021577514294df45d06cd8aae
+  m_ActiveProfileId: 525b3b81017771a42b80920876dc9808
   m_CcdManagedData:
     EnvironmentId: 
     EnvironmentName: 
