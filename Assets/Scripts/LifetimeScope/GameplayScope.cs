@@ -34,6 +34,7 @@ public class GameplayScope : LifetimeScope
         {
             pointsBuilder.Add<GameplayPresenter>().WithParameter("sceneName", _navigationSceneName);
             pointsBuilder.Add<StartGameEntryPoint>();
+            pointsBuilder.Add<CreateRecipesPoint>();
         });
     }
 }

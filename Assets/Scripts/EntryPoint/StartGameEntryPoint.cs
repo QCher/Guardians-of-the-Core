@@ -28,7 +28,6 @@ public class StartGameEntryPoint : IAsyncStartable
     [UsedImplicitly]
     async UniTask IAsyncStartable.StartAsync(CancellationToken cancellation = new CancellationToken())
     {
-        
         foreach (var placement in _placements)
         {
             var character = await _charactersContainer.GetRandom();
