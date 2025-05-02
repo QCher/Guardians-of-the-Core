@@ -32,6 +32,9 @@ namespace CustomRP.Runtime
 
         private void DrawVisibleGeometry()
         {
+            var drawingSettings = new DrawingSettings();
+            var filterSettings = new FilteringSettings();
+            _context.DrawRenderers(_cullingResults, ref drawingSettings, ref filterSettings);
             _context.DrawSkybox(_camera);
         }
         void Setup () {
