@@ -1,9 +1,6 @@
-using System;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 using UnityEngine.Pool;
-using Random = Unity.Mathematics.Random;
 
 public class Creature : MonoBehaviour
 {
