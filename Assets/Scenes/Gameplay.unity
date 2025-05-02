@@ -131,6 +131,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ground_01
       objectReference: {fileID: 0}
+    - target: {fileID: 1686021177304871604, guid: ebee340de387f334f9ac44e044abd8fb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1686021177305034388, guid: ebee340de387f334f9ac44e044abd8fb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -220,7 +224,6 @@ MonoBehaviour:
   - {fileID: 7029523611228863623}
   - {fileID: 7029523610521161216}
   - {fileID: 7029523610947330225}
-  _character: {fileID: 4275089974699143811, guid: 29855e4a0c37747448a3fe54db331aec, type: 3}
 --- !u!4 &146876344
 Transform:
   m_ObjectHideFlags: 0

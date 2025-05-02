@@ -6,17 +6,10 @@ namespace CustomRP.Runtime
     [CreateAssetMenu(menuName = "Rendering/Custom Render Pipeline")]
     public class CustomRenderPipelineAsset : RenderPipelineAsset
     {
+        public CustomRPSettings settings;
         protected override RenderPipeline CreatePipeline()
         {
-            return null;
-        }
-    }
-
-    public class CustomRenderPipeline : RenderPipeline
-    {
-        protected override void Render(ScriptableRenderContext context, Camera[] cameras)
-        {
-            
+            return new CustomRenderPipeline(settings);
         }
     }
 }

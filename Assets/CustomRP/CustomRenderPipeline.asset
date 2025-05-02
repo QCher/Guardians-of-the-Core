@@ -12,3 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc8932152bc2f8445be4d25fc4daaf47, type: 3}
   m_Name: CustomRenderPipeline
   m_EditorClassIdentifier: 
+  settings:
+    Author: Vitalii Kucherenko
+    Version: 1.0
+    eMail: kucherenkov1990@gmail.com
