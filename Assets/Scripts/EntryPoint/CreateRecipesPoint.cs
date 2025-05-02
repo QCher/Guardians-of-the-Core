@@ -16,9 +16,9 @@ namespace VContainer
         }
     }
 
-    public class PrintNameNodeHandler : HierarchyNodeTypeHandlerBase
+    public class MaterialNodeHandler : HierarchyNodeTypeHandlerBase
     {
-        public PrintNameNodeHandler(string name)
+        public MaterialNodeHandler(Recipe recipe)
         {
             
         }
@@ -35,6 +35,9 @@ namespace VContainer
             var item = new Hierarchy();
             
             var node1 = item.Add(item.Root);
+            var property = item.GetOrCreatePropertyString("Count");
+            property.SetValue(node1, "2");
+            
             var node2 = item.Add(item.Root);
             var node3 = item.Add(node1);
             var node4 = item.Add(node1);
@@ -42,6 +45,7 @@ namespace VContainer
             var node6 = item.Add(node5);
             var node7 = item.Add(node5);
             
+            //item.SetName(item.Root, "0");
             item.SetName(node1, "1");
             item.SetName(node2, "2");
             item.SetName(node3, "3");
@@ -54,6 +58,8 @@ namespace VContainer
             var path = item.GetPath(node7);
             
             Debug.Log(path);
+            Debug.Log(property.GetValue(node1));
+            Debug.Log(property.GetValue(node2));
 
 
 
