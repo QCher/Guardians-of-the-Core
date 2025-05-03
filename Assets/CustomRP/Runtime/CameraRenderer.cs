@@ -6,7 +6,7 @@ namespace CustomRP.Runtime
     public class CameraRenderer
     {
         const string _commandBufferName = "RenderCamera";
-        static ShaderTagId unlitTagId = new ShaderTagId("SRPDefaultUnlit");
+        static ShaderTagId unlitTagId = new ("SRPDefaultUnlit");
         CommandBuffer _commandBuffer = new ()
         {
             name = _commandBufferName,
@@ -20,6 +20,8 @@ namespace CustomRP.Runtime
             _camera = camera;
             _context = context;
 
+            PrepareForSceneWindow();
+            
             if (!Cull())
             {
                 return;
@@ -75,6 +77,12 @@ namespace CustomRP.Runtime
         {
             _context.ExecuteCommandBuffer(_commandBuffer);
             _commandBuffer.Clear();
+        }
+        
+        void PrepareForSceneWindow () {
+            if (_camera.cameraType == CameraType.SceneView) {
+                ScriptableRenderContext.EmitWorldGeometryForSceneView(_camera);
+            }
         }
         
         
