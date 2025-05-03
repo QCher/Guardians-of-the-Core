@@ -1,6 +1,7 @@
 using System.IO;
 using UnityEditor;
 using UnityEditor.AddressableAssets;
+using UnityEditor.AddressableAssets.Build;
 using UnityEditor.AddressableAssets.Settings;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -8,6 +9,7 @@ using UnityEngine.AddressableAssets;
 public class ContentBuilder
 {
     private const string RemoteSettingAAPath = "Assets/AddressableAssetsData/AddressableAssetSettings[Remote].asset";
+    private const string BuilderAssetPath = "Assets/AddressableAssetsData/DataBuilders/ContentBuildScript.asset";
     [MenuItem("Addressables/Build Content")]
     static void BuildContent()
     {
@@ -17,14 +19,28 @@ public class ContentBuilder
             return;
         }
 
-        if (!SetProfile())
+        if (!SetupProfile())
         {
-            Debug.LogError($"Failed to build content file on {nameof(SetProfile)} stage");
+            Debug.LogError($"Failed to build content file on {nameof(SetupProfile)} stage");
             return;
         }
+
+        // if (!SetupBuilder(BuilderAssetPath))
+        // {
+        //     Debug.LogError($"Failed to build content file on {nameof(SetupBuilder)} stage");
+        //     return;
+        // }
         
         AddressableAssetSettings.BuildPlayerContent(out var result);
-        Debug.Log(result);
+        var success = string.IsNullOrEmpty(result.Error);
+        if (!success)
+        {
+            Debug.LogError("Addressable build error encountered: " + result.Error);
+        }
+        else
+        {
+            Debug.Log("<color=green>Addressable build succeeded</color>");
+        }
     }
 
 
@@ -41,7 +57,7 @@ public class ContentBuilder
         return true;
     }
 
-    static bool SetProfile(string profileName = "Remote")
+    static bool SetupProfile(string profileName = "Remote")
     {
         var profileId = AddressableAssetSettingsDefaultObject.Settings.profileSettings.GetProfileId(profileName);
         if (string.IsNullOrEmpty(profileId))
@@ -50,6 +66,30 @@ public class ContentBuilder
             return false;
         }
         AddressableAssetSettingsDefaultObject.Settings.activeProfileId = profileId;
+        return true;
+    }
+
+    static bool SetupBuilder(string assetPath)
+    {
+        var asset = AssetDatabase.LoadAssetAtPath<ScriptableObject>(assetPath) as IDataBuilder;
+        if (asset == null)
+        {
+            Debug.LogError($"Asset at path: {assetPath} not found.");
+            return false;
+        }
+        
+        int index = AddressableAssetSettingsDefaultObject.Settings.DataBuilders.IndexOf((ScriptableObject)asset);
+
+        if (index > 0)
+            AddressableAssetSettingsDefaultObject.Settings.ActivePlayerDataBuilderIndex = index;
+        else
+        {
+            Debug.LogWarning($"{asset} must be added to the " +
+                             $"DataBuilders list before it can be made " +
+                             $"active. Using last run builder instead.");
+            return false;
+        }
+        
         return true;
     }
 }
