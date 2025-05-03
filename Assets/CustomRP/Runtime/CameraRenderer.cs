@@ -6,6 +6,7 @@ namespace CustomRP.Runtime
     public class CameraRenderer
     {
         const string _commandBufferName = "RenderCamera";
+        static ShaderTagId unlitTagId = new ShaderTagId("SRPDefaultUnlit");
         CommandBuffer _commandBuffer = new ()
         {
             name = _commandBufferName,
@@ -32,8 +33,9 @@ namespace CustomRP.Runtime
 
         private void DrawVisibleGeometry()
         {
-            var drawingSettings = new DrawingSettings();
-            var filterSettings = new FilteringSettings();
+            var sortingSettings = new SortingSettings(_camera);
+            var drawingSettings = new DrawingSettings(unlitTagId, sortingSettings);
+            var filterSettings = new FilteringSettings(RenderQueueRange.all);
             _context.DrawRenderers(_cullingResults, ref drawingSettings, ref filterSettings);
             _context.DrawSkybox(_camera);
         }
