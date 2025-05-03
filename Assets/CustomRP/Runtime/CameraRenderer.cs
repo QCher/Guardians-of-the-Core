@@ -35,9 +35,15 @@ namespace CustomRP.Runtime
         {
             var sortingSettings = new SortingSettings(_camera);
             var drawingSettings = new DrawingSettings(unlitTagId, sortingSettings);
-            var filterSettings = new FilteringSettings(RenderQueueRange.all);
+            var filterSettings = new FilteringSettings(RenderQueueRange.opaque);
+            
             _context.DrawRenderers(_cullingResults, ref drawingSettings, ref filterSettings);
             _context.DrawSkybox(_camera);
+
+            sortingSettings.criteria = SortingCriteria.CommonTransparent;
+            drawingSettings.sortingSettings = sortingSettings;
+            filterSettings.renderQueueRange = RenderQueueRange.transparent;
+            _context.DrawRenderers(_cullingResults, ref drawingSettings, ref filterSettings);
         }
         void Setup () {
             _context.SetupCameraProperties(_camera);
