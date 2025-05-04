@@ -1,10 +1,9 @@
-using System.IO;
+#if UNITY_EDITOR
 using UnityEditor;
 using UnityEditor.AddressableAssets;
 using UnityEditor.AddressableAssets.Build;
 using UnityEditor.AddressableAssets.Settings;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 
 public class ContentBuilder
 {
@@ -25,11 +24,11 @@ public class ContentBuilder
             return;
         }
 
-        // if (!SetupBuilder(BuilderAssetPath))
-        // {
-        //     Debug.LogError($"Failed to build content file on {nameof(SetupBuilder)} stage");
-        //     return;
-        // }
+        if (!SetupBuilder(BuilderAssetPath))
+        {
+            Debug.LogError($"Failed to build content file on {nameof(SetupBuilder)} stage");
+            return;
+        }
         
         AddressableAssetSettings.BuildPlayerContent(out var result);
         var success = string.IsNullOrEmpty(result.Error);
@@ -93,3 +92,5 @@ public class ContentBuilder
         return true;
     }
 }
+
+#endif
