@@ -22,7 +22,7 @@ namespace Util.Editor
         {
 #if !MYDEFINEHERE
             Debug.Log("Setting up SessionState to inform an Addressables build is requested on next Domain Reload");
-            SessionState.SetBool("BuildAddressables", true);
+            SessionState.SetBool("Build Addressable", true);
             string originalDefines = PlayerSettings.GetScriptingDefineSymbolsForGroup(EditorUserBuildSettings.selectedBuildTargetGroup);
             string newDefines = string.IsNullOrEmpty(originalDefines) ? "MYDEFINEHERE" : originalDefines + ";MYDEFINEHERE";
             Debug.Log("Setting Scripting Defines, this will then start compiling and begin a domain reload of the Editor Scripts.");
