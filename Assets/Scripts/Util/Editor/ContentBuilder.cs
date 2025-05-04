@@ -1,4 +1,5 @@
 #if UNITY_EDITOR
+using System;
 using UnityEditor;
 using UnityEditor.AddressableAssets;
 using UnityEditor.AddressableAssets.Build;
@@ -90,6 +91,25 @@ public class ContentBuilder
         }
         
         return true;
+    }
+    
+    
+    /// <summary>
+    /// Example:
+    /// D:\Unity\2020.3.0f1\Editor\Unity.exe -quit -batchMode -projectPath . -executeMethod BatchBuild.ChangeSettings -defines=FOO;BAR -buildTarget Android
+    ///D:\Unity\2020.3.0f1\Editor\Unity.exe -quit -batchMode -projectPath . -executeMethod BatchBuild.BuildContentAndPlayer -buildTarget Android
+    /// </summary>
+    public static void ChangeSettings()
+    {
+        string defines = "";
+        string[] args = Environment.GetCommandLineArgs();
+
+        foreach (var arg in args)
+            if (arg.StartsWith("-defines=", System.StringComparison.CurrentCulture))
+                defines = arg.Substring(("-defines=".Length));
+
+        var buildSettings = EditorUserBuildSettings.selectedBuildTargetGroup;
+        PlayerSettings.SetScriptingDefineSymbolsForGroup(buildSettings, defines);
     }
 }
 
