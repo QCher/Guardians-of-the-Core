@@ -18,7 +18,6 @@ MonoBehaviour:
     Hash: 00000000000000000000000000000000
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 1
-  m_BundleLocalCatalog: 0
   m_CatalogRequestsTimeout: 0
   m_DisableCatalogUpdateOnStart: 0
   m_InternalIdNamingMode: 0
@@ -73,6 +72,24 @@ MonoBehaviour:
     - m_InheritedParent: 
       m_Id: 525b3b81017771a42b80920876dc9808
       m_ProfileName: Default
+      m_Values:
+      - m_Id: 5027c752f06fc6f42bc1a13d4ebdb814
+        m_Value: '[UnityEngine.AddressableAssets.Addressables.BuildPath]/[BuildTarget]'
+      - m_Id: 8458fe07370a55449a14871b90056c52
+        m_Value: '[UnityEngine.AddressableAssets.Addressables.BuildPath]/[BuildTarget]'
+      - m_Id: 8edd7c1976e37994ca906ccc29640fcb
+        m_Value: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}/[BuildTarget]'
+      - m_Id: 96eba22a7015afa489565d4930e3c9b5
+        m_Value: Vitalii Kucherenko kucherenkov1990@gmail.com
+      - m_Id: d229388591b9a92439c6108abcb129aa
+        m_Value: '[UnityEditor.EditorUserBuildSettings.activeBuildTarget]'
+      - m_Id: e489bd413e4fa9a4e848f6196f28badd
+        m_Value: Default profile with local built-in assets
+      - m_Id: ee6e8d655b3063a42ae1ab671f279d75
+        m_Value: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}/[BuildTarget]'
+    - m_InheritedParent: 
+      m_Id: 1afa38cbba37ae24996bf3c2fb457c8b
+      m_ProfileName: CCD
       m_Values:
       - m_Id: 5027c752f06fc6f42bc1a13d4ebdb814
         m_Value: '[UnityEngine.AddressableAssets.Addressables.BuildPath]/[BuildTarget]'
@@ -145,7 +162,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 004a9df14faf30747bf73cde6a49eb38, type: 2}
   - {fileID: 11400000, guid: 6edf95f3a26556349950033f47611876, type: 2}
   - {fileID: 11400000, guid: 32a8c19d3eff4ad469f010c2e8222701, type: 2}
-  m_ActiveProfileId: fc9aee5021577514294df45d06cd8aae
+  m_ActiveProfileId: 1afa38cbba37ae24996bf3c2fb457c8b
   m_CcdManagedData:
     EnvironmentId: 
     EnvironmentName: 
