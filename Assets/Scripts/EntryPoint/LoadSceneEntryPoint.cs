@@ -23,7 +23,7 @@ namespace VContainer
         async UniTask IAsyncStartable.StartAsync(CancellationToken cancellation = new())
         {
             await Addressables.InitializeAsync();
-            await Addressables.UpdateCatalogs(autoCleanBundleCache: true);
+            //await Addressables.UpdateCatalogs(autoCleanBundleCache: true);
            // await Addressables.CleanBundleCache();
             await _sceneLoader.LoadScene(_sceneName);
         }
