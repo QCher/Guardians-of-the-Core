@@ -17,6 +17,5 @@ public class BootScope : LifetimeScope
         builder.Register<SaveDataService>(Lifetime.Singleton);
         builder.RegisterInstance(_charactersContainer);
         builder.RegisterEntryPoint<LoadSceneEntryPoint>().WithParameter("sceneName", _sceneName);
-        
     }
 }
